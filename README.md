@@ -9,7 +9,7 @@
 - update:
   - [LICENSE](LICENSE) (at least, replace `<name>`)
   - [frontend/LICENSE](frontend/LICENSE) (at least, replace `<name>`)
-  - [frontend.cabal](frontend/frontend.cabal) (replace `<name>`, `email`)
+  - [frontend.cabal](frontend/frontend.cabal) (replace `<name>`, `<email>`)
 - optional:
   - [update](#update-reflex-platform) `reflex-platform`
   - if you don't use Visual Studio Code: `rm -rf .vscode`
@@ -22,7 +22,7 @@
     - `rm -rf frontend`
     - [add new package](#add-package)
 
-## bin
+## bin/
 
 - `build` = `nix-build -o result/frontend -A ghcjs.frontend`
 - `build-native` = `nix-build -o result/frontend-native -A ghc.frontend --arg useWarp false`
@@ -45,6 +45,7 @@
   - `bin/shell`
   - `bin/shelljs`
 - run `bin/open` to open app running with warp
+  - `bin/ghcid` is one of the ways to start app with warp
 - run your favorite editor under `bin/shell` (e.g. `code .`)
 - optional:
   - run `bin/repl` under `bin/shell`
@@ -53,13 +54,13 @@
 
 - run `bin/build`
 - see result in `result/frontend/bin/frontend.jsexe`
-  - can open it with `bin/open-file`
+  - use `bin/open-file` to open it
 
 native:
 
 - run `bin/build-native`
 - see result in `result/frontend-native/bin`
-  - can run it with `bin/run`
+  - use `bin/run` to run it
 
 ## howto
 
@@ -89,10 +90,10 @@ native:
 
 This template is based on:
 
-- [Exploring Nix & Haskell Part 3: Less Nix, More Reflex](https://cah6.github.io/technology/nix-haskell-3/)
-  - [haskell-nix-skeleton-2](https://github.com/cah6/haskell-nix-skeleton-2)
-    - based on [reflex-project-skeleton](https://github.com/ElvishJerricco/reflex-project-skeleton)
-      - uses [reflex-platform](https://github.com/reflex-frp/reflex-platform)
+- [Exploring Nix & Haskell Part 3: Less Nix, More Reflex](https://cah6.github.io/technology/nix-haskell-3/) article
+  - the code is in [haskell-nix-skeleton-2](https://github.com/cah6/haskell-nix-skeleton-2)
+    - which is based on [reflex-project-skeleton](https://github.com/ElvishJerricco/reflex-project-skeleton)
+      - which uses [reflex-platform](https://github.com/reflex-frp/reflex-platform)
 
 ## license
 
