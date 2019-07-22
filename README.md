@@ -1,6 +1,31 @@
 # Project template for the projects based on reflex-frp
 
-[reflex-frp](https://reflex-frp.org) is functional reactive programming framework for Haskell.
+[reflex-frp](https://reflex-frp.org) is a functional reactive programming framework for Haskell.
+
+## prerequisites
+
+- see reflex-platform notes on [os-compatibility](https://github.com/reflex-frp/reflex-platform#os-compatibility)
+  - also, it works on Ubuntu and should work on any Linux
+- for OS except [NixOS](https://nixos.org/nixos/) you'll need [Nix](https://nixos.org/nix/manual/#ch-installing-binary) package manager
+  - single user installation is the simplest thing that will work, but for experience closer to NixOS you may want to use multi-user installation
+
+If you use NixOS, you may want to add [binary cache](https://github.com/reflex-frp/reflex-platform/blob/develop/notes/NixOS.md); for any other OS the same can be done for Nix package manager by adding to `/etc/nix/nix.conf` the following:
+
+```
+substituters = https://cache.nixos.org https://nixcache.reflex-frp.org
+trusted-public-keys = cache.nixos.org-1:6NCHdD59X431o0gWypbMrAURkbJ16ZPMQFGspcDShjY= ryantrinkle.com-1:JJiAKaRv9mWgpVAz8dwewnZe0AzzEAzPkagE9SP5NWI=
+binary-caches = https://cache.nixos.org https://nixcache.reflex-frp.org
+binary-cache-public-keys = cache.nixos.org-1:6NCHdD59X431o0gWypbMrAURkbJ16ZPMQFGspcDShjY= ryantrinkle.com-1:JJiAKaRv9mWgpVAz8dwewnZe0AzzEAzPkagE9SP5NWI=
+binary-caches-parallel-connections = 40
+```
+
+## reflex docs
+
+- [An introduction to reflex](https://qfpl.io/posts/reflex/basics/introduction/) by Queensland FP Lab
+- [reflex-dom-inbits](https://github.com/hansroland/reflex-dom-inbits)
+- [Reflex docs](http://docs.reflex-frp.org/en/latest/reflex_docs.html)
+- [Reflex Quick(ish) Reference](https://github.com/reflex-frp/reflex/blob/develop/Quickref.md)
+- [Reflex-Dom Quick(ish) Reference](https://github.com/reflex-frp/reflex-dom/blob/develop/Quickref.md)
 
 ## start
 
@@ -62,19 +87,17 @@ native:
 - see result in `result/frontend-native/bin`
   - use `bin/run` to run it
 
-## howto
-
-### update reflex-platform
+## update reflex-platform
 
 - go to [reflex-platform](https://github.com/reflex-frp/reflex-platform) and find commit you want
 - `nix-prefetch-git https://github.com/reflex-frp/reflex-platform.git` _commit_
 - use `rev` and `sha256` from output to update [nix/reflex-platform.nix](nix/reflex-platform.nix)
 
-### add dependency
+## add dependency
 
 - [Adding some dependencies](https://cah6.github.io/technology/nix-haskell-3/#adding-some-dependencies)
 
-### add package
+## add package
 
 - `bin/shell` (if not under it already)
 - `mkdir` _package_
