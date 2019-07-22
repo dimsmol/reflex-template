@@ -6,7 +6,7 @@
 
 - see reflex-platform notes on [os-compatibility](https://github.com/reflex-frp/reflex-platform#os-compatibility)
   - also, it works on Ubuntu and should work on any Linux
-- for OS except [NixOS](https://nixos.org/nixos/) you'll need [Nix](https://nixos.org/nix/manual/#ch-installing-binary) package manager
+- for any OS except [NixOS](https://nixos.org/nixos/) you'll need [Nix](https://nixos.org/nix/manual/#ch-installing-binary) package manager
   - single user installation is the simplest thing that will work, but for experience closer to NixOS you may want to use multi-user installation
 
 If you use NixOS, you may want to add [binary cache](https://github.com/reflex-frp/reflex-platform/blob/develop/notes/NixOS.md); for any other OS the same can be done for Nix package manager by adding to `/etc/nix/nix.conf` the following:
@@ -89,7 +89,7 @@ native:
 
 ## update reflex-platform
 
-- go to [reflex-platform](https://github.com/reflex-frp/reflex-platform) and find commit you want
+- open [reflex-platform](https://github.com/reflex-frp/reflex-platform) and find commit you want
 - `nix-prefetch-git https://github.com/reflex-frp/reflex-platform.git` _commit_
 - use `rev` and `sha256` from output to update [nix/reflex-platform.nix](nix/reflex-platform.nix)
 
