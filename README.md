@@ -72,7 +72,7 @@ binary-caches-parallel-connections = 40
 - `run-cabal` = `dist-newstyle/build/x86_64-linux/ghc-8.4.3/frontend-0.1.0.0/x/frontend/build/frontend/frontend`
 - `shell` = `nix-shell -A shells.ghc`
 - `shelljs` = `nix-shell -A shells.ghcjs`
-- `style` = `find src -name "*.hs" | xargs stylish-haskell -i`
+- `style` = `find frontend/src -name "*.hs" | xargs stylish-haskell -i`
 
 ## dev
 
