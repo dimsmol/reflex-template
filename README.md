@@ -118,7 +118,7 @@ native:
 ## misc
 
 - `bin/clean` - remove all build results
-- `bin/style` - run stylish-haskell
+- `bin/style` - run stylish-haskell (run under `bin/shell`)
   - WARN: updates files in place, use with care!
   - it's recommended to commit the changes first, then run `bin/style` and make sure you like the diff
 
@@ -143,6 +143,7 @@ native:
 - add _package_ to [default.nix](default.nix) sections `packages` and `shells`
 - add _package_ src dir to [.vscode/settings.json](.vscode/settings.json) under `ghcSimple.startupCommands.custom` item that starts with `:set -i`
   - paths are separated by `:` like `-ifrontend/src:somepkg/src`
+- update [bin/style](bin/style)
 
 ## credits
 

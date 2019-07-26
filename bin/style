@@ -1,2 +1,2 @@
 #!/usr/bin/env bash
-find src -name "*.hs" | xargs stylish-haskell -i
+find frontend/src -name "*.hs" | xargs stylish-haskell -i
