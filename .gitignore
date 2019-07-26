@@ -1,4 +1,4 @@
-/dist*
+/dist-*
 /result
 /.ghc*
 **/*.hi
